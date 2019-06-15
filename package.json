@@ -1,0 +1,22 @@
+{
+  "name": "oracle_graph_comparison",
+  "version": "1.0.0",
+  "description": "node comparison expand <type1> <value1> <type2> <value2> ...",
+  "main": "comparison.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shayderi/oracle_graph_comparison.git"
+  },
+  "author": "shay deri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shayderi/oracle_graph_comparison/issues"
+  },
+  "homepage": "https://github.com/shayderi/oracle_graph_comparison#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}

@@ -32,10 +32,21 @@
             {
               "id_type":"T3",
               "id_value":"V3"
+            }
+          ]
+        },
+        {
+          "id_type":"T1",
+          "id_value":"V1",
+          "hoops":1,
+          "path": [
+            {
+              "id_type":"T1",
+              "id_value":"V1"
             },
             {
-              "id_type":"T6",
-              "id_value":"V6"
+              "id_type":"T7",
+              "id_value":"V7"
             }
           ]
         }
