@@ -2,12 +2,11 @@ const request = require('request')
 const sampleResults = require('./sample1')
 const config = require('./config')
 
-const sample = () => sampleResults
+const sample = () => new Promise((resolve) => {
+  resolve(sampleResults)
+})
 
 async function fetchExpand(typeValueArr) {
-  const requestBody = {
-
-  }
 
   const graphHeaders = {}
   const oracleHeaders = {}
@@ -16,7 +15,11 @@ async function fetchExpand(typeValueArr) {
     url: config.graphUrl,
     method: 'post',
     json: true,
-    body: requestBody,
+    body: { // TODO
+      "statements" : [ {
+        "statement" : `call raf.IExpand()` // use typeValueArr here
+      } ]
+    },
     graphHeaders
   };
 
@@ -24,7 +27,9 @@ async function fetchExpand(typeValueArr) {
     url: config.oracleUrl,
     method: 'post',
     json: true,
-    body: requestBody,
+    body: {
+      // TODO
+    },
     oracleHeaders
   };
 

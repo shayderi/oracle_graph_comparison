@@ -3,7 +3,7 @@ const pathStatistics = require('./pathStatistics');
 const {valuesVectorStats, identicalVectorsCmp} = require('./valuesSimilarity');
 const {sample, fetchExpand} = require('./expansionProvider')
 
-function comparison(oracleResult, graphResult, statistics, comparisons) {
+async function comparison(oracleResult, graphResult, statistics, comparisons) {
   const maxLen = Math.max(get('length', oracleResult), get('length', graphResult))
   for (var index = 0; index < maxLen; index++) {
     statistics.forEach(statistic => {
@@ -16,13 +16,13 @@ function comparison(oracleResult, graphResult, statistics, comparisons) {
   }
 }
 
-expand = get('argv[2]', process) == 'sample' ? sample : fetchExpand
+const expand = get('argv[2]', process) == 'sample' ? sample : fetchExpand
 
-resultsSample = expand(drop(process.argv, 3))
-
-comparison(
-  resultsSample.oracle, 
-  resultsSample.graph, 
-  [pathStatistics, valuesVectorStats], // statistics list
-  [identicalVectorsCmp] // comparisons list
-)
+expand(drop(process.argv, 3)).then((resultsSample) => {
+  comparison(
+    resultsSample.oracle, 
+    resultsSample.graph, 
+    [pathStatistics, valuesVectorStats], // statistics list
+    [identicalVectorsCmp] // comparisons list
+  )
+})

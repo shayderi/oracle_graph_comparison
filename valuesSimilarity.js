@@ -22,7 +22,7 @@ const identicalVectorsCmp = (oracleExpansion, graphExpansion) => {
     });  
   });
   return `
-  following path are identical in both results:
+  Identical path:
   ${identical}
   `
 }
