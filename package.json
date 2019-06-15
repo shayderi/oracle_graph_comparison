@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/shayderi/oracle_graph_comparison#readme",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "request": "^2.88.0"
   }
 }
