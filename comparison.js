@@ -18,7 +18,7 @@ async function comparison(oracleResult, graphResult, statistics, comparisons) {
 
 const expand = get('argv[2]', process) == 'sample' ? sample : fetchExpand
 
-expand(drop(process.argv, 3)).then((resultsSample) => {
+expand(drop(3, process.argv)).then((resultsSample) => {
   comparison(
     resultsSample.oracle, 
     resultsSample.graph, 
