@@ -18,6 +18,7 @@
   "homepage": "https://github.com/shayderi/oracle_graph_comparison#readme",
   "dependencies": {
     "lodash": "^4.17.11",
+    "neo4j-driver": "^1.7.5",
     "request": "^2.88.0"
   }
 }

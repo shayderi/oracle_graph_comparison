@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/comparison.js",
-      "args": ["sample"]
+      "args": ["2", "t1", "v1", "t2", "v2"] // "args": ["sample"] for sample
     }
   ]
 }

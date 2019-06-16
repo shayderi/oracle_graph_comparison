@@ -1,7 +1,7 @@
 const  { get, drop } = require('lodash/fp');
 const pathStatistics = require('./pathStatistics');
 const {valuesVectorStats, identicalVectorsCmp} = require('./valuesSimilarity');
-const {sample, fetchExpand} = require('./expansionProvider')
+const {sample, expandOracleAndGraph} = require('./expansionProvider')
 
 async function comparison(oracleResult, graphResult, statistics, comparisons) {
   const maxLen = Math.max(get('length', oracleResult), get('length', graphResult))
@@ -16,9 +16,9 @@ async function comparison(oracleResult, graphResult, statistics, comparisons) {
   }
 }
 
-const expand = get('argv[2]', process) == 'sample' ? sample : fetchExpand
+const expand = get('argv[2]', process) == 'sample' ? sample : expandOracleAndGraph
 
-expand(drop(3, process.argv)).then((resultsSample) => {
+expand(drop(2, process.argv)).then((resultsSample) => {
   comparison(
     resultsSample.oracle, 
     resultsSample.graph, 
