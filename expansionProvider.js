@@ -25,7 +25,7 @@ function fetchGraph(parsedArgs) {
   try {
     driver = neo4j.driver(
       config.graphUrl, // TODO check URL at configuration
-      neo4j.auth.basic('neo4j', 'deri1978')
+      neo4j.auth.basic('neo4j', 'HERE_COMES_PASS')
     )  
   } catch (error) {
     console.log(error)
