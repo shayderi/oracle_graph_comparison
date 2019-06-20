@@ -1,6 +1,6 @@
 const  { get, drop } = require('lodash/fp');
 const pathStatistics = require('./pathStatistics');
-const {valuesVectorStats, identicalVectorsCmp} = require('./valuesSimilarity');
+const {valuesVectorStats, identicalVectorsCmp, tuplesCmp} = require('./valuesSimilarity');
 const {sample, expandOracleAndGraph} = require('./expansionProvider')
 
 async function comparison(oracleResult, graphResult, statistics, comparisons) {
@@ -23,6 +23,6 @@ expand(drop(2, process.argv)).then((resultsSample) => {
     resultsSample.oracle, 
     resultsSample.graph, 
     [pathStatistics, valuesVectorStats], // statistics list
-    [identicalVectorsCmp] // comparisons list
+    [identicalVectorsCmp, tuplesCmp] // comparisons list
   )
 })
